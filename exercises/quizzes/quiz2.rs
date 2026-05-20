@@ -33,10 +33,10 @@ mod my_module {
         for (input, cmd) in input {
             match cmd {
                 Command::Uppercase => results.push(input.to_uppercase()),
-                Command::Trim => results.push(input[0..input.len() - 1].to_string()),
+                Command::Trim => results.push(input.trim().to_string()),
                 Command::Append(bound) => {
                     let mut result: String = String::from(input);
-                    for i in 1..bound {
+                    for i in 0..bound {
                         result += "bar";
                     }
                     results.push(result);
